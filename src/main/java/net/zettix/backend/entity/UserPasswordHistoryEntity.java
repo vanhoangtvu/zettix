@@ -6,7 +6,7 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "userpasswordhistory")
-public class UserPasswordHistory {
+public class UserPasswordHistoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -14,7 +14,7 @@ public class UserPasswordHistory {
     //kết nối với bảng user
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id")
-    private User user; //lay tu bảng user
+    private UserEntity user; //lay tu bảng user
 
     @Column(nullable = false,length = 100)
     private String passwordHash;
